@@ -7,8 +7,8 @@ if($method == 'POST'){
 	$requestBody = file_get_contents('php://input');
 	$json = json_decode($requestBody);
 
-	$text = $json->	->parameters->product;
-
+	//$text = $json->	->parameters->product;
+/*
 	switch ($text) {
 		case 'Kaas':
 			$speech = "Kaas is toegevoegd";
@@ -26,7 +26,9 @@ if($method == 'POST'){
 			$speech = "Sorry, I didnt get that. Please ask me something else.";
 			break;
 	}
-
+*/
+	$speech = "Kaas is toegevoegd";
+	
 	$response = new \stdClass();
 	$response->speech = $speech;
 	$response->displayText = $speech;
