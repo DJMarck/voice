@@ -7,7 +7,7 @@ if($method == 'POST'){
 	$requestBody = file_get_contents('php://input');
 	$json = json_decode($requestBody);
 
-	$text = $json->	->parameters->product;
+	//$text = $json->	->parameters->text;
 /*
 	switch ($text) {
 		case 'Kaas':
@@ -27,11 +27,11 @@ if($method == 'POST'){
 			break;
 	}
 */
-	$speech = "Kaas is toegevoegd";
+	//$speech = "Kaas is toegevoegd";
 	
 	$response = new \stdClass();
-	$response->speech = $speech;
-	$response->displayText = $speech;
+	$response->speech = "Kaas is toegevoegd";
+	$response->displayText = "Kaas is toegevoegd";
 	$response->source = "webhook";
 	echo json_encode($response);
 }
