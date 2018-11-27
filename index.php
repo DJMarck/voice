@@ -1,5 +1,6 @@
 <?php 
-
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+	
 $method = $_SERVER['REQUEST_METHOD'];
 
 // Process only when method is POST
@@ -9,6 +10,16 @@ if($method == 'POST'){
 
 	//$text = $json->queryResult->parameters->product;	
 	$text =  $json->results->metadata->addtolist;
+	
+	$.ajax({
+          type: "GET",
+          url: 'https://hooks.zapier.com/hooks/catch/1737846/c2eid5/?text=KAAS',
+          success: function(data){
+            //alert(data);
+          }
+       });
+	
+	
 /*
 	switch ($text) {
 		case 'Kaas':
